@@ -1,5 +1,6 @@
 # Sculter.js
 With Sculter.JS you can reduce the code of programs that work with MySQL.
+
 Creating database in Node.js MySQL
 ```js
 var mysql = require('mysql');
