@@ -31,3 +31,14 @@ sculter.send({
 
 console.log("Database created");
 ```
+## Documentations
+### Getting started
+```
+$ npm install sculter.js
+```
+### Linking Sculter.JS
+Linking a JavaScript file to Sculter.JS is as follows:
+```js
+const sculter = require("sculter.js"); // Linking sculter.js
+```
+### Using `send()` method
