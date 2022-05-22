@@ -218,3 +218,14 @@ sculter.send({
   outTo: "console" // output data to console
 });
 ```
+### `ORDER BY` query in Sculter.js
+Data can be sorted in SQL in a variety of ways. We output the data in the `customers` table in alphabetical order to the data in the `name` column.
+```js
+const sculter = require("sculter.js");
+
+sculter.send({
+  connect: ["localhost", "username", "password", "mydb"], // connecting MySQL
+  sql: "SELECT * FROM customers ORDER BY name", // Displays the data in the name column in alphabetical order.
+  outTo: "console" // output data to console
+});
+```
