@@ -58,3 +58,17 @@ sculter.send({
   sql // sql property
 });
 ```
+### Using `connect` property
+The `connect` property is used to connect to a MySQL database. It takes a value in an array. The array must contain 3 or 4 values.
+```js
+const sculter = require("sculter.js");
+
+sculter.send({
+  connect: ["localhost", "username", "password"], // connect property
+});
+```
+Properties of `connect`:
+- `"localhost"` MySQL server
+- `"username"` MySQL username
+- `"password"` MySQL password
+- - `"dbname"` MySQL database
