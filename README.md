@@ -90,8 +90,22 @@ sculter.send({
   connect: ["localhost", "username", "password"] // connecting MySQL
   sql: "CREATE DATABASE mydb" // sending SQL query to MySQL
 });
+
+console.log("Database created");
 ```
 `mydb` is the name of the database we created.  In the `sql` property we enter queries in the SQL programming language.
 ```sql
 CREATE DATABASE mydb -- is also a SQL query.
 ``` 
+### Creating table in Sculter.js
+Above we have created a database called `mydb`, now we will create a table called` customers`.
+```js
+const sculter = require("sculter.js") // linking sculter.js
+
+sculter.send({
+  connect: ["localhost", "username", "password", "mydb"] // connecting MySQL
+  sql: "CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255))" // sending SQL query to MySQL
+});
+
+console.log("Table created");
+```
