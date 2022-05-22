@@ -117,7 +117,7 @@ const sculter = require("sculter.js");
 
 sculter.send({
   outTo: "server", // outputing data to web server
-  path: "/" // your web server path,
+  path: "/", // your web server path,
   port: 3000 // your server port
 });
 ```
@@ -192,3 +192,14 @@ sculter.send({
 console.log("Records saved");
 ```
 You must use the `values` property of Sculter.JS to enter one data or more than one data in a table at a time.
+### Getting data from table
+We take the data from the `customers` table and use the `outTo` property to output the data to the JS console.
+```js
+const sculter = require("sculter.js");
+
+sculter.send({
+  connect: ["localhost", "username", "password", "mydb"], // connecting MySQL
+  sql: "SELECT * FROM customers", // getting data from customers table
+  outTo: "console" // output data to console
+});
+```
