@@ -93,5 +93,5 @@ sculter.send({
 ```
 `mydb` is the name of the database we created.  In the `sql` property we enter queries in the SQL programming language.
 ```sql
-CREATE DATABASE mydb ` is also a SQL query.
+CREATE DATABASE mydb -- is also a SQL query.
 ``` 
