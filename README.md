@@ -230,7 +230,7 @@ sculter.send({
 });
 ```
 ### In Sculter.JS, delete the row in the Table according to the information provided.
-In SQl, you can delete a row that contains information from the table. It will be displayed with the query `WHERE`.
+In SQL, you can delete a row that contains information from the table. It will be displayed with the query `WHERE`.
 ```sql
 DELETE FROM customers WHERE address = 'Mountain 21' -- We delete the Mountain 21 information row
 ```
@@ -241,6 +241,18 @@ const sculter = require("sculter.js");
 sculter.send({
   connect: ["localhost", "username", "password", "mydb"], // connecting MySQL
   sql: "DELETE FROM customers WHERE address = 'Mountain 21'", // We delete the Mountain 21 information rowDisplays the data in the name column in alphabetical order.
+});
+
+console.log("Success deleted");
+```
+### Droping database in Sculter.js
+Delete the database called `testDB` in Sculter.JS.
+```js
+const sculter = require("sculter.js");
+
+sculter.send({
+  connect: ["localhost", "username", "password", "mydb"], // connecting MySQL
+  sql: "DROP DATABASE testDB", // Deleting database.
 });
 
 console.log("Success deleted");
