@@ -257,3 +257,15 @@ sculter.send({
 
 console.log("Success deleted");
 ```
+### Droping table in Sculter.js
+Delete the table called `customers` in Sculter.JS.
+```js
+const sculter = require("sculter.js");
+
+sculter.send({
+  connect: ["localhost", "username", "password", "mydb"], // connecting MySQL
+  sql: "DROP TABLE customers", // Deleting table.
+});
+
+console.log("Table deleted");
+```
