@@ -1,5 +1,5 @@
 # Sculter.js
-With Sculter.JS you can reduce the code of programs that work with MySQL.
+To create a program that can integrate with Node.js and MySQL, a lot of code needs to be written, and these codes are difficult for beginners to understand. But with Sculter.JS, you can significantly shorten the code you write in MySQL, and it will be much more understandable even for beginners. For example:
 
 Creating database in Node.js MySQL
 ```js
