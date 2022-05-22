@@ -49,13 +49,14 @@ const sculter = require("sculter.js");
 sculter.send({}); // Using send method
 ```
 ### Properties of the `Send` method
-The `Send` method has two object properties. These are `connect` and` sql`. Their use is as follows:
+The `Send` method has two object properties. These are `connect`, `sql` and `outTo`. Their use is as follows:
 ```js
 const sculter = require("sculter.js");
 
 sculter.send({
   connect, // connect property
-  sql // sql property
+  sql, // sql property
+  outTo
 });
 ```
 ### Using `connect` property
@@ -79,6 +80,34 @@ const sculter = require("sculter.js");
 
 sculter.send({
   sql: "" // sending SQL query to MySQL
+});
+```
+### Using `outTo` propery
+You can use the `outTo` property to output data. With `OutTo`, you can output data to a JavaScript console, files, and a web server. If the `outTo` property is not entered, the data will be output on the console.
+```js
+const sculter = require("sculter.js");
+
+sculter.send({
+  outTo: "" // exporting data
+});
+```
+### Outputting data to JS console in `outTo` property
+To output the data to the JavaScript console, you assign the `console` value to the` outTo` property.
+```js
+const sculter = require("sculter.js");
+
+sculter.send({
+  outTo: "console" // outputing data to JS console
+});
+```
+### Outputting data to file in `outTo` property
+To output the data to the file, you assign the `file` value to the` outTo` property and set filename to `file` property.
+```js
+const sculter = require("sculter.js");
+
+sculter.send({
+  outTo: "file", // outputing data to file
+  file: "filename" // your file name to set data
 });
 ```
 ### Creating database in Sculter.JS
