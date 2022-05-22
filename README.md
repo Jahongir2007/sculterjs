@@ -72,3 +72,26 @@ Properties of `connect`:
 - `"username"` MySQL username
 - `"password"` MySQL password
 - `"dbname"` MySQL database
+### Using `sql` property
+You can use the `sql` property to send SQL queries to MySQL. Below you will learn how to use the `sql` property.
+```js
+const sculter = require("sculter.js");
+
+sculter.send({
+  sql: "" // sending SQL query to MySQL
+});
+```
+### Creating database in Sculter.JS
+We create a MySQL database with Sculter.js.
+```js
+const sculter = require("sculter.js") // linking sculter.js
+
+sculter.send({
+  connect: ["localhost", "username", "password"] // connecting MySQL
+  sql: "CREATE DATABASE mydb" // sending SQL query to MySQL
+});
+```
+`mydb` is the name of the database we created.  In the `sql` property we enter queries in the SQL programming language.
+```sql
+CREATE DATABASE mydb ` is also a SQL query.
+``` 
