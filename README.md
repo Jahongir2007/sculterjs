@@ -1,3 +1,4 @@
+![sculterjs](https://user-images.githubusercontent.com/69193276/169705804-519a6084-df4a-422b-bd80-88f9a80b8388.png)
 # Sculter.js
 To create a program that can integrate with Node.js and MySQL, a lot of code needs to be written, and these codes are difficult for beginners to understand. But with Sculter.JS, you can significantly shorten the code you write in MySQL, and it will be much more understandable even for beginners. For example:
 
