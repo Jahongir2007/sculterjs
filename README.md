@@ -71,4 +71,4 @@ Properties of `connect`:
 - `"localhost"` MySQL server
 - `"username"` MySQL username
 - `"password"` MySQL password
-- - `"dbname"` MySQL database
+- `"dbname"` MySQL database
