@@ -281,3 +281,25 @@ sculter.send({
 
 console.log("Data changed");
 ```
+### Limiting data in Sculter.JS
+You can limit the number of records returned from the query, by using the `LIMIT` statement. Select the 5 first records in the "customers" table:
+```js
+const sculter = require("sculter.js");
+
+sculter.send({
+  connect: ["localhost", "username", "password", "mydb"], // connecting MySQL
+  sql: "SELECT * FROM customers LIMIT 5", // Selecting 5 records
+  outTo: "console" // output data to console
+});
+```
+### Join two or more table in Sculter.js
+You can combine rows from two or more tables, based on a related column between them, by using a JOIN statement. These two tables can be combined by using users' `favorite_product` field and products' `id` field. Select records with a match in both tables:
+```js
+const sculter = require("sculter.js");
+
+sculter.send({
+  connect: ["localhost", "username", "password", "mydb"], // connecting MySQL
+  sql: "SELECT users.name AS user, products.name AS favorite FROM users JOIN products ON users.favorite_product = products.id", // combining rows
+  outTo: "console" // output data to console
+});
+```
