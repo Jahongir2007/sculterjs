@@ -269,3 +269,15 @@ sculter.send({
 
 console.log("Table deleted");
 ```
+### Updating data from table in Sculter.js
+Changing the address column from `"Valley 345"` to `"Canyon 123"`:
+```js
+const sculter = require("sculter.js");
+
+sculter.send({
+  connect: ["localhost", "username", "password", "mydb"], // connecting MySQL
+  sql: "UPDATE customers SET address = 'Canyon 123' WHERE address = 'Valley 345'", // Changing data
+});
+
+console.log("Data changed");
+```
