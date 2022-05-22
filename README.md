@@ -109,3 +109,6 @@ sculter.send({
 
 console.log("Table created");
 ```
+```sql
+CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255)) -- SQL query for creating table
+```
