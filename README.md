@@ -203,3 +203,18 @@ sculter.send({
   outTo: "console" // output data to console
 });
 ```
+### Using SQL query `WHERE` in Sculter.JS
+In SQL, the WHERE query is used to retrieve a single piece of data from a table. The full SQL code is available below:
+```sql
+SELECT * FROM customers WHERE address = 'Park Lane 38' -- The Park Lane 38 row of the table outputs the available data.
+```
+Now we will use these SQL codes in MySQL using Sculter.JS.
+```js
+const sculter = require("sculter.js");
+
+sculter.send({
+  connect: ["localhost", "username", "password", "mydb"], // connecting MySQL
+  sql: "SELECT * FROM customers WHERE address = 'Park Lane 38'", // The Park Lane 38 row of the table outputs the available data.
+  outTo: "console" // output data to console
+});
+```
