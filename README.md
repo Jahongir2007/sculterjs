@@ -42,3 +42,19 @@ Linking a JavaScript file to Sculter.JS is as follows:
 const sculter = require("sculter.js"); // Linking sculter.js
 ```
 ### Using `send()` method
+There is only one method in Sculter.JS. It is also the `send()` method. The `Send` method is used as an object.
+```js
+const sculter = require("sculter.js");
+
+sculter.send({}); // Using send method
+```
+### Properties of the `Send` method
+The `Send` method has two object properties. These are `connect` and` sql`. Their use is as follows:
+```js
+const sculter = require("sculter.js");
+
+sculter.send({
+  connect, // connect property
+  sql // sql property
+});
+```
