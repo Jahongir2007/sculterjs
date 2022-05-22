@@ -229,3 +229,19 @@ sculter.send({
   outTo: "console" // output data to console
 });
 ```
+### In Sculter.JS, delete the row in the Table according to the information provided.
+In SQl, you can delete a row that contains information from the table. It will be displayed with the query `WHERE`.
+```sql
+DELETE FROM customers WHERE address = 'Mountain 21' -- We delete the Mountain 21 information row
+```
+Now we will send the above codes to MySQL with Sculter.JS
+```js
+const sculter = require("sculter.js");
+
+sculter.send({
+  connect: ["localhost", "username", "password", "mydb"], // connecting MySQL
+  sql: "DELETE FROM customers WHERE address = 'Mountain 21'", // We delete the Mountain 21 information rowDisplays the data in the name column in alphabetical order.
+});
+
+console.log("Success deleted");
+```
