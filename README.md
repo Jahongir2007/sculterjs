@@ -120,7 +120,7 @@ const sculter = require("sculter.js") // linking sculter.js
 sculter.send({
   connect: ["localhost", "username", "password", "mydb"], // connecting MySQL
   sql: "INSERT INTO customers (name, address) VALUES ?", // sending SQL query to MySQL
-  values: [
+  values: [ // data for table
     ['John', 'Highway 71'],
     ['Peter', 'Lowstreet 4'],
     ['Amy', 'Apple st 652'],
@@ -140,3 +140,4 @@ sculter.send({
 
 console.log("Records saved");
 ```
+You must use the `values` property of Sculter.JS to enter one data or more than one data in a table at a time.
