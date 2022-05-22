@@ -22,7 +22,7 @@ con.connect(function(err) {
 ```
 Creating database in Node.js MySQL + Sculter.js
 ```js
-const sculter = require("sculter");
+const sculter = require("sculter.js");
 
 sculter.send({
   connect: ["localhost", "yourusername", "yourpassword"],
