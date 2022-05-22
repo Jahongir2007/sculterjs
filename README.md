@@ -64,7 +64,7 @@ The `connect` property is used to connect to a MySQL database. It takes a value 
 const sculter = require("sculter.js");
 
 sculter.send({
-  connect: ["localhost", "username", "password"], // connect property
+  connect: ["localhost", "username", "password"] // connect property
 });
 ```
 Properties of `connect`:
@@ -87,7 +87,7 @@ We create a MySQL database with Sculter.js.
 const sculter = require("sculter.js") // linking sculter.js
 
 sculter.send({
-  connect: ["localhost", "username", "password"] // connecting MySQL
+  connect: ["localhost", "username", "password"], // connecting MySQL
   sql: "CREATE DATABASE mydb" // sending SQL query to MySQL
 });
 
@@ -103,7 +103,7 @@ Above we have created a database called `mydb`, now we will create a table calle
 const sculter = require("sculter.js") // linking sculter.js
 
 sculter.send({
-  connect: ["localhost", "username", "password", "mydb"] // connecting MySQL
+  connect: ["localhost", "username", "password", "mydb"], // connecting MySQL
   sql: "CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255))" // sending SQL query to MySQL
 });
 
@@ -111,4 +111,32 @@ console.log("Table created");
 ```
 ```sql
 CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255)) -- SQL query for creating table
+```
+### Insert Into in Sculter.js
+Enter data into our `customers` table.
+```js
+const sculter = require("sculter.js") // linking sculter.js
+
+sculter.send({
+  connect: ["localhost", "username", "password", "mydb"], // connecting MySQL
+  sql: "INSERT INTO customers (name, address) VALUES ?", // sending SQL query to MySQL
+  values: [
+    ['John', 'Highway 71'],
+    ['Peter', 'Lowstreet 4'],
+    ['Amy', 'Apple st 652'],
+    ['Hannah', 'Mountain 21'],
+    ['Michael', 'Valley 345'],
+    ['Sandy', 'Ocean blvd 2'],
+    ['Betty', 'Green Grass 1'],
+    ['Richard', 'Sky st 331'],
+    ['Susan', 'One way 98'],
+    ['Vicky', 'Yellow Garden 2'],
+    ['Ben', 'Park Lane 38'],
+    ['William', 'Central st 954'],
+    ['Chuck', 'Main Road 989'],
+    ['Viola', 'Sideway 1633']
+  ]
+});
+
+console.log("Records saved");
 ```
