@@ -31,7 +31,7 @@ new Connect(['localhost', 'username', 'password', 'database']).sql(); // sending
 const sculter = require("sculter.js"); // importing sculter.js
 let Connect = sculter.Connection; // declaring sculter connection
 
-new Connect(['localhost', 'username', 'password', 'database']).sql("CREATE DATABASE mydb"); // creating database mydb
+new Connect(['localhost', 'username', 'password']).sql("CREATE DATABASE mydb"); // creating database mydb
 
 console.log("DB created");
 ```
@@ -40,7 +40,7 @@ console.log("DB created");
 const sculter = require("sculter.js"); // importing sculter.js
 let Connect = sculter.Connection; // declaring sculter connection
 
-new Connect(['localhost', 'username', 'password', 'database']).sql("CREATE TABLE customers"); // creating table customers
+new Connect(['localhost', 'username', 'password', 'mydb']).sql("CREATE TABLE customers"); // creating table customers
 
 console.log("Table created");
 ```
@@ -49,7 +49,7 @@ console.log("Table created");
 const sculter = require("sculter.js"); // importing sculter.js
 let Connect = sculter.Connection; // declaring sculter connection
 
-new Connect(['localhost', 'username', 'password', 'database']).sql(["INSERT INTO customers (name, address) VALUES ?", [
+new Connect(['localhost', 'username', 'password', 'mydb', 'customers' /* customers - table name */]).sql(["INSERT INTO customers (name, address) VALUES ?", [
    ['John', 'Highway 71'],
     ['Peter', 'Lowstreet 4'],
     ['Amy', 'Apple st 652'],
@@ -67,4 +67,20 @@ new Connect(['localhost', 'username', 'password', 'database']).sql(["INSERT INTO
 ]]); // insering data to table
 
 console.log("Datas inserted");
+```
+#### Select from
+```js
+const sculter = require("sculter.js"); // importing sculter.js
+let Connect = sculter.Connection; // declaring sculter connection
+
+new Connect(['localhost', 'username', 'password', 'mydb']).sql("SELECT * FROM customers"); // getting data from table customers
+```
+
+#### Where
+#### Creating table
+```js
+const sculter = require("sculter.js"); // importing sculter.js
+let Connect = sculter.Connection; // declaring sculter connection
+
+new Connect(['localhost', 'username', 'password', 'mydb']).sql(SELECT * FROM customers WHERE address = 'Park Lane 38'); // getting one row
 ```
