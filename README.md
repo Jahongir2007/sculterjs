@@ -31,7 +31,40 @@ new Connect(['localhost', 'username', 'password', 'database']).sql(); // sending
 const sculter = require("sculter.js"); // importing sculter.js
 let Connect = sculter.Connection; // declaring sculter connection
 
-new Connect(['localhost', 'username', 'password', 'database']).sql("CREATE DATABASE mydb"); // sending sql query
+new Connect(['localhost', 'username', 'password', 'database']).sql("CREATE DATABASE mydb"); // creating database mydb
 
-console.log("DB created")
+console.log("DB created");
+```
+#### Creating table
+```js
+const sculter = require("sculter.js"); // importing sculter.js
+let Connect = sculter.Connection; // declaring sculter connection
+
+new Connect(['localhost', 'username', 'password', 'database']).sql("CREATE TABLE customers"); // creating table customers
+
+console.log("Table created");
+```
+#### Insert into
+```js
+const sculter = require("sculter.js"); // importing sculter.js
+let Connect = sculter.Connection; // declaring sculter connection
+
+new Connect(['localhost', 'username', 'password', 'database']).sql(["INSERT INTO customers (name, address) VALUES ?", [
+   ['John', 'Highway 71'],
+    ['Peter', 'Lowstreet 4'],
+    ['Amy', 'Apple st 652'],
+    ['Hannah', 'Mountain 21'],
+    ['Michael', 'Valley 345'],
+    ['Sandy', 'Ocean blvd 2'],
+    ['Betty', 'Green Grass 1'],
+    ['Richard', 'Sky st 331'],
+    ['Susan', 'One way 98'],
+    ['Vicky', 'Yellow Garden 2'],
+    ['Ben', 'Park Lane 38'],
+    ['William', 'Central st 954'],
+    ['Chuck', 'Main Road 989'],
+    ['Viola', 'Sideway 1633']
+]]); // insering data to table
+
+console.log("Datas inserted");
 ```
