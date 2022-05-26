@@ -77,10 +77,51 @@ new Connect(['localhost', 'username', 'password', 'mydb']).sql("SELECT * FROM cu
 ```
 
 #### Where
-#### Creating table
 ```js
 const sculter = require("sculter.js"); // importing sculter.js
 let Connect = sculter.Connection; // declaring sculter connection
 
-new Connect(['localhost', 'username', 'password', 'mydb']).sql(SELECT * FROM customers WHERE address = 'Park Lane 38'); // getting one row
+new Connect(['localhost', 'username', 'password', 'mydb']).sql("SELECT * FROM customers WHERE address = 'Park Lane 38'"); // getting one row
+```
+#### Order by
+```js
+const sculter = require("sculter.js"); // importing sculter.js
+let Connect = sculter.Connection; // declaring sculter connection
+
+new Connect(['localhost', 'username', 'password', 'mydb']).sql("SELECT * FROM customers ORDER BY name"); // ordering by name
+```
+#### Delete
+```js
+const sculter = require("sculter.js"); // importing sculter.js
+let Connect = sculter.Connection; // declaring sculter connection
+
+new Connect(['localhost', 'username', 'password', 'mydb']).sql("DELETE FROM customers WHERE address = 'Mountain 21'"); // deleting one row
+```
+#### Drop table
+```js
+const sculter = require("sculter.js"); // importing sculter.js
+let Connect = sculter.Connection; // declaring sculter connection
+
+new Connect(['localhost', 'username', 'password', 'mydb']).sql("DROP TABLE customers"); // deleting table customers
+```
+#### Update
+```js
+const sculter = require("sculter.js"); // importing sculter.js
+let Connect = sculter.Connection; // declaring sculter connection
+
+new Connect(['localhost', 'username', 'password', 'mydb']).sql("UPDATE customers SET address = 'Canyon 123' WHERE address = 'Valley 345'"); // updating data
+```
+#### Limit
+```js
+const sculter = require("sculter.js"); // importing sculter.js
+let Connect = sculter.Connection; // declaring sculter connection
+
+new Connect(['localhost', 'username', 'password', 'mydb']).sql("SELECT * FROM customers LIMIT 5"); // getting limited data
+```
+#### Join
+```js
+const sculter = require("sculter.js"); // importing sculter.js
+let Connect = sculter.Connection; // declaring sculter connection
+
+new Connect(['localhost', 'username', 'password', 'mydb']).sql("SELECT users.name AS user, products.name AS favorite FROM users JOIN products ON users.favorite_product = products.id"); // joining
 ```
